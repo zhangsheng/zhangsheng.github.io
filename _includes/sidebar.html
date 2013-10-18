@@ -16,11 +16,34 @@
     {% if archives_year != post_year %}
         {% assign archives_year = post_year %}
 		{% if forloop.first %}
-			<div class="panel-heading"><h4>{{ archives_year }}</h4></div><ul class="list-group">
+			<div class="panel-heading div-year" id="{{forloop.index}}"><h4>{{ archives_year }}</h4></div><ul class="list-group" id="list{{forloop.index}}">
 		{% else %}
-			</ul><div class="panel-heading"><h4>{{ archives_year }}</h4></div><ul class="list-group">
+			</ul><div class="panel-heading div-year" id="{{forloop.index}}"><h4>{{ archives_year }}</h4></div><ul class="list-group" id="list{{forloop.index}}">
 		{% endif %}
     {% endif %}
     <li class="list-group-item" style="background:rgba(0,0,0,0)"><em>{{ post.date | date: "%m.%d" }}</em> - <a href="{{post.url}}"><strong>{{ post.title }}</strong></a></li>
 {% endfor %}
 </ul></div>
+
+<script type='text/javascript'>
+	$(document).ready(function(){
+		var list = $(".div-year");
+		for(var i=1;i<list.length;i++){
+			var node = list.eq(i);
+			$("#list"+node.attr("id")).hide();
+		}
+	});
+	$(".div-year").click(function(){
+		var id = $(this).attr("id");
+		var list = $(".div-year");
+		for(var i=0;i<list.length;i++){
+			var node = list.eq(i);
+			if(node.attr("id")==id){
+				$("#list"+id).toggle();
+			}else{
+				$("#list"+node.attr("id")).hide();
+			}
+		}
+	//	$("#list"+id).toggle();
+	});
+</script>
