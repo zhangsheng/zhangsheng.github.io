@@ -1,4 +1,4 @@
-<img id="profile" src="{{site.baseurl}}/assets/img/xly.jpg" />
+<img id="profile" src="/assets/img/xly.jpg" />
 <hr/>
 
 <div class="panel"  style="background:rgba(0,0,0,0)">
@@ -8,7 +8,7 @@
 	<div class="panel-body" style="padding:0px">
 	<ul class="list-group">
 	{% for post in site.posts limit:5 %}
-		<li class="list-group-item" style="background:rgba(0,0,0,0)"><em>{{ post.date | date: "%Y-%m-%d" }}</em> - <a href="{{ site.baseurl }}{{post.url}}"><strong>{{ post.title }}</strong></a></li>
+		<li class="list-group-item" style="background:rgba(0,0,0,0)"><em>{{ post.date | date: "%Y-%m-%d" }}</em> - <a href="{{post.url}}"><strong>{{ post.title }}</strong></a></li>
 	{% endfor %}
 	</ul>
 	</div>
