@@ -1,0 +1,26 @@
+
+
+<img id="profile" src="{{site.baseurl}}/assets/img/xly.jpg" />
+<hr/>
+
+{% capture archives_year %}
+{{ 'now' | date: '\%Y-\%m' }}
+{% endcapture %}
+
+<div class="panel" style="background:rgba(0,0,0,0)">
+{% for post in site.posts %}
+    {% capture post_year %}
+        {{ post.date | date: '%Y-%m' }}
+    {% endcapture %}
+	
+    {% if archives_year != post_year %}
+        {% assign archives_year = post_year %}
+		{% if forloop.first %}
+			<div class="panel-heading"><h4>{{ archives_year }}</h4></div><ul class="list-group">
+		{% else %}
+			</ul><div class="panel-heading"><h4>{{ archives_year }}</h4></div><ul class="list-group">
+		{% endif %}
+    {% endif %}
+    <li class="list-group-item" style="background:rgba(0,0,0,0)"><em>{{ post.date | date: "%m.%d" }}</em> - <a href="{{ site.baseurl }}{{post.url}}"><strong>{{ post.title }}</strong></a></li>
+{% endfor %}
+</ul></div>

@@ -1,0 +1,29 @@
+---
+layout: default
+title: 我的blog
+---
+
+
+{% for post in paginator.posts %}
+<div class="panel" style="background:rgba(0,0,0,0)">
+    <div class="panel-heading"><a href="{{ site.baseurl }}{{post.url}}">{{ post.title }}</a></div>
+	<div class="panel-body">{{ post.content | strip_html | truncate : 50}}</div>
+	<div class="panel-footer" style="background:rgba(0,0,0,0)"><span>&nbsp;</span>{% include labels.html param=post.tags %}<em class="pull-right">{{post.date | date: "%Y-%m-%d %H:%M:%S"}}</em></div>
+</div>
+{% endfor %}
+
+<ul class="pager">
+ {% if paginator.previous_page %}
+    <li class="previous"><a href="{{site.baseurl}}{{ paginator.previous_page_path }}">&larr;上一页</a></li>
+  {% else %}
+    <li class="previous disabled"><span class="next">上一页</span></li>
+  {% endif %}
+	<li><span class="page_number ">当前: {{ paginator.page }} of {{ paginator.total_pages }}</span></li>  
+  {% if paginator.next_page %}
+    <li class="next"><a href="{{site.baseurl}}{{ paginator.next_page_path }}" class="next">下一页&rarr;</a></li>
+  {% else %}
+    <li class="next disabled"><span class="next">下一页</span></li>
+  {% endif %}
+</ul>
+
+

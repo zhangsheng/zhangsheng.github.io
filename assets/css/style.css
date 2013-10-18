@@ -1,0 +1,163 @@
+body{
+	padding-top:30px;
+	background:url("../img/body.jpg");
+	background-size:100%;
+	background-repeat:no-repeat;
+	filter:alpha(opacity=30);
+}
+
+.label-a{
+  background:#AAAAAA;
+  background: -moz-linear-gradient(left top, black, white);
+  background:-webkit-gradient(linear, left top, right bottom, from(#000000), to(#fff));
+}
+
+.label-b{
+  background:#AAAAAA;
+  background: -moz-linear-gradient(left bottom, white, black);
+  background:-webkit-gradient(linear, left bottom, right top, from(#fff), to(#000));  
+}
+
+.label-c{
+  background:#AAAAAA;
+  background: -moz-linear-gradient(left, black, white);
+  background:-webkit-gradient(linear, left top, right top, from(#000000), to(#fff));
+}
+
+.label-d{
+  background:#AAAAAA;
+  background: -moz-linear-gradient(left, white, black);
+  background:-webkit-gradient(linear, left top, right top, from(#fff), to(#000));  
+}
+
+.label-e{
+  background:#AAAAAA;
+  background: -moz-linear-gradient(top, black, white);
+  background:-webkit-gradient(linear, left top, left bottom, from(#000000), to(#fff));
+}
+
+.panel-heading a{
+	font-size:20px;
+	font-family:KaiTi,STXingkai,FangSong,Microsoft YaHei;
+	background-color: #ffffff;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: rgba(0,0,0,0.6);
+	text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+}
+
+#header{
+background:url(../img/header.png);
+background-size:30% 80%;
+background-repeat:no-repeat;height:120px;
+background-position:90% 50%;
+}
+
+.panel{
+	background：rgba(0,0,0,0);
+}
+
+.list-group{
+	background:rgba(0,0,0,0);
+}
+
+.page-header h1 {
+font-family: Arial, sans-serif;
+font-size: 24px;
+color: #369;
+}
+
+.list-group-item a, em {
+	color:#000000;
+	font-family:KaiTi, Microsoft YaHei;
+}
+
+#sidebar{
+	border-right:1px solid silver;
+}
+#content{
+	padding-right:20px;
+	margin-right:20px;
+	border-right:1px solid silver;
+}
+
+#profile {
+  margin: 55px auto 35px;
+  border-radius: 50%;
+  box-shadow: 0 0 0px 2px white, 0 0 0 3px #cccccc;
+  display: block; }
+  #profile:hover {
+    -webkit-animation: spin 0.3s linear infinite;
+    -moz-animation: spin 0.3s linear infinite;
+    -ms-animation: spin 0.3s linear infinite;
+    -o-animation: spin 0.3s linear infinite;
+    animation: spin 0.3s linear infinite; }
+	
+	
+.bs-example {
+  position: relative;
+  padding: 45px 15px 15px 20px;
+  margin: 0 -15px 15px 20px;
+  background-color: #fafafa;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+}
+/* Echo out a label for the example */
+.bs-example:after {
+  position: absolute;
+  top:  15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Tweak display of the code snippets when following an example */
+.bs-example + .highlight {
+  margin: -15px -15px 15px;
+  border-radius: 0;
+  border-width: 0 0 1px;
+}
+
+	
+	
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(359deg); } }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(359deg); } }
+
+@-o-keyframes spin {
+  from {
+    -o-transform: rotate(0deg); }
+
+  to {
+    -o-transform: rotate(359deg); } }
+
+@-ms-keyframes spin {
+  from {
+    -ms-transform: rotate(0deg); }
+
+  to {
+    -ms-transform: rotate(359deg); } }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+
+  to {
+    transform: rotate(359deg); } }

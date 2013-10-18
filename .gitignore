@@ -1,1 +1,3 @@
-_site/
+_site/*
+assets/img/.picasa.ini
+assets/img/.picasaoriginals/*
