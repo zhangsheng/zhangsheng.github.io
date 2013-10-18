@@ -1,4 +1,3 @@
-baseurl: /
 paginate: 5
 paginate_path: "page:num"
 timezone: UTC-08:00
