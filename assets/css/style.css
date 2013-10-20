@@ -4,6 +4,12 @@ body{
 	background-size:100%;
 	background-repeat:no-repeat;
 	filter:alpha(opacity=30);
+	font-family:Microsoft YaHei;
+}
+
+p{
+	font-family:KaiTi,STKaiti,Microsoft YaHei;
+	font-size:18px;
 }
 
 .label-a{
@@ -67,6 +73,10 @@ background-position:90% 50%;
 font-family: Arial, sans-serif;
 font-size: 24px;
 color: #369;
+}
+
+.panel-body{
+font-family:Microsoft YaHei;
 }
 
 .list-group-item a, em {
