@@ -5,3 +5,4 @@ markdown: rdiscount
 name: 聖的博客
 url: http://zhangsheng.github.io
 description: 张盛的个人博客
+permalink: /blog/:year/:month/:day/:title.html
