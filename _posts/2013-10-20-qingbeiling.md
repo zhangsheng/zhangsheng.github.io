@@ -3,7 +3,7 @@ layout: post
 title: "倾杯令·秋"
 description: ""
 category: ""
-tags: ["mine","other"]
+tags: ["mine","词"]
 date: 2013-10-20 16:21:35 +0800
 ---
 
