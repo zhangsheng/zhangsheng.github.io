@@ -25,4 +25,4 @@ date: 2013-10-21 22:08:48 +0800
 
 扯了这么多，到最后自己都不知道在说什么了。只能觉得，既然暂时没有那么多技术可以说，不可能完全的打造成一个技术博客，那就先把心中所想的记录下来吧，顺便练习一下自己的条理能力和书面表达能力。
 
-<a href="http://s760.photobucket.com/user/cmy_zs/media/35ae728d33df8a38b21bbae5_zps91b8a768.jpg.html" target="_blank"><img src="http://i760.photobucket.com/albums/xx246/cmy_zs/35ae728d33df8a38b21bbae5_zps91b8a768.jpg" border="0" alt=" photo 35ae728d33df8a38b21bbae5_zps91b8a768.jpg"/></a>
+<img src="http://i760.photobucket.com/albums/xx246/cmy_zs/35ae728d33df8a38b21bbae5_zps91b8a768.jpg" border="0" style="max-width:600px" alt=" photo 35ae728d33df8a38b21bbae5_zps91b8a768.jpg"/>
