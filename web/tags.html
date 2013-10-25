@@ -1,0 +1,17 @@
+---
+layout: tags
+title: 盛的博客
+---
+
+{% for tag in site.tags %}
+<div class="panel">
+	<div class="panel-heading"><h3 id="{{tag[0]}}--link">{{tag[0]}}</h3></div>
+	<div class="panel-body">
+		<ul class="list-group">
+		{% for page in tag[1] %}
+		<li class="list-group-item">{{ page.date | date: "%Y.%m.%d" }} --> <a href="{{page.url}}" style="font-size:20px">{{ page.title }}</a></li>
+		{% endfor %}
+		</ul>		
+	</div>
+</div>
+{% endfor %}
