@@ -59,10 +59,9 @@ a, a:hover{
 }
 
 #header{
-background:url(../img/header.png);
+background:url(../img/header.png) 90% 50% no-repeat;
 background-size:30% 80%;
-background-repeat:no-repeat;height:120px;
-background-position:90% 50%;
+height:120px;
 }
 
 .panel{
