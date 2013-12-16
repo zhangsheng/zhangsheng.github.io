@@ -1,0 +1,65 @@
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		var str = new Array();
+		var avg = Math.round(window.screen.width/40);
+		function getRandomStr(){
+			var str = "";
+			var length = Math.round(Math.random()*50);
+			for(i=0;i<length;i++){
+				var c = String.fromCharCode(Math.round(Math.random()*256))+"<br>";
+				str+=c;				
+			}
+			str+="<span style='color:#66ccff'>"+String.fromCharCode(Math.round(Math.random()*26)+96)+"</spam>"
+			return str;
+		}
+		$(document).ready(function(){
+			inter = setInterval("getRun()", 50);
+		});
+
+		function getRun(){
+			for(var k = 0; k<40; k++){
+				if(typeof(str[k]) != "undefined"){
+					if(str[k].top > window.screen.height){
+						str[k].span.innerHTML="";
+						$("#span_"+k).remove();
+						delete str[k];
+					}else{
+						str[k].top += str[k].speed;
+						str[k].span.css("top", str[k].top+"px");
+					}
+				}
+				else if(Math.random()<0.25){
+					str[k] = new Object();
+					str[k].content = getRandomStr();
+					str[k].speed = Math.random()*20+3;
+					$("#hacker").append("<span id=\"span_"+k+"\" ></span>");					
+					str[k].span = $("#span_"+k);
+					str[k].span.hide();
+					str[k].span.html(str[k].content);
+					str[k].top = 0-str[k].span.innerHeight();
+					str[k].span.css("position","absolute");
+					str[k].span.css("left", (k*avg+Math.round(Math.random()*10))+"px");
+					str[k].span.css("top", str[k].top+"px");
+					str[k].span.show();
+				}
+			}
+		}
+
+	</script>
+	<style type="text/css">
+		body{
+			background-color: #000000;
+			color: #00ff00;
+			max-height: 90%;
+			max-width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="hacker">
+
+	</div>
+</body>
+</html>
