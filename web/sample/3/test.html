@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>2048</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<style type="text/css">
+		.container{
+			width:60%;
+			margin: 0 auto;
+			text-align:center;			
+		}
+		.total{
+			width:400px;
+			height: 400px;
+			margin:0 auto;
+			margin-top: 100px;
+			background-color:silver;
+			font-size:36px;
+		}
+		.row{
+			width:400px;
+			height:100px;
+			margin:-1px auto;
+			border: 1px solid white;
+		}
+		.cell{
+			float: left;
+			width: 98px;
+			height: 69px;
+			margin: -1px auto;
+			border: 1px solid white;
+			vertical-align: middle;
+			padding-top: 30px;
+		}
+		.a{
+			background-color: red;
+		}
+		.cell span{
+			vertical-align: center;
+			height:40px;
+			margin: 0 auto;
+		}
+		</style>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="total">
+				<div class="row">
+					<div class="cell"></div>
+					<div class="cell"></div>
+					<div class="cell"></div>
+					<div class="cell"></div>
+				</div>
+				<div class="row">
+					<div class="cell"></div>
+					<div class="cell"></div>
+					<div class="cell"></div>
+					<div class="cell"></div>
+				</div>
+				<div class="row">
+					<div class="cell"></div>
+					<div class="cell"></div>
+					<div class="cell"></div>
+					<div class="cell"></div>
+				</div>
+				<div class="row">
+					<div class="cell"></div>
+					<div class="cell"></div>
+					<div class="cell"></div>
+					<div class="cell"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		var _value = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
+		var R = Math.random;
+		var F = Math.floor;
+
+		function refresh(){
+			$("div.row").each(function(i){
+				$(this).children().each(function(j){
+					if(_value[i][j]){
+						$(this).html("<span>"+(_value[i][j])+"</span>");
+					}else{
+						$(this).html("");
+					}
+				});
+			});
+		}
+		function addRandom()
+		{
+			var v = (R(1)<0.9) ? 2:4;
+			var p = getRandomPosition();
+			_value[F(p/4)][p%4] = v;
+			refresh();
+		}
+		function getRandomPosition(){
+			var list = getAvailable();
+			var pos = list[F(R()*list.length)];
+			console.log("position"+(F(pos/4))+":"+(pos%4));
+			return pos;
+		}
+		function getAvailable(){
+			var i = 0;
+			var array = new Array();
+			for(var j=0;j<4;j++){
+				for(var k=0;k<4;k++){
+					if(!_value[j][k]){
+						array.push(i);
+					}
+					i++;
+				}					
+			}				
+			return array;
+		}
+		function combineU(d){
+			for(var i=0;i<4;i++){
+				var list = combined(getCol(i));
+				var t = d ? 0 : (4 - list.length);
+				for(var j=0;j<list.length;j++){
+					_value[j+t][i] = list[j];
+				}
+			}
+			var tmp = getAvailable();
+			if(tmp.length){
+				addRandom();
+			}
+			else{
+				alert("Game over");
+			}
+		}
+
+		function combineL(d){
+			for(var i=0;i<4;i++){
+				var list = combined(getRow(i));
+				var t = d ? 0 : (4 - list.length);
+				for(var j=0;j<list.length;j++){
+					_value[i][j+t] = list[j];
+				}
+			}
+			var tmp = getAvailable();
+			if(tmp.length){
+				addRandom();
+			}
+			else{
+				alert("Game over");
+			}			
+		}
+
+		function getCol(index){
+			var array = new Array();
+			for(var i=0;i<_value.length;i++){
+				array.push(_value[i][index]);
+				_value[i][index] = 0;
+			}
+			return array;
+		}
+		function getRow(index){
+			var array = new Array();
+			for(var i=0;i<_value.length;i++){
+				array.push(_value[index][i]);
+				_value[index][i] = 0;
+			}
+			return array;			
+		}
+		function combined(list){
+			var array = new Array();
+			for(var i in list){
+				if(list[i]){
+					array.push(list[i]);
+				}
+			}
+			for(var i=0;i<array.length-1;i++){
+				if(array[i] == array[i+1]){
+					array[i] = array[i]+array[i+1];
+					array.splice(i+1,1);
+				}
+			}
+			return array;
+		}
+		$(document).keydown(function(event){
+			if(event.keyCode == 37){
+				combineL(1);
+			}else if(event.keyCode == 38){
+				combineU(1);
+			}else if(event.keyCode == 39){
+				combineL(0);
+			}else if(event.keyCode == 40){
+				combineU(0);
+			}
+		});
+		addRandom();
+		addRandom();
+		</script>
+	</body>
+</html>
