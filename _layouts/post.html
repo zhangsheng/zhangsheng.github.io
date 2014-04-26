@@ -29,6 +29,21 @@
 <div class="well well-lg">
 {{ content }}
 </div>
+<div class="panel-footer">
+	<div class="row">
+		{% if page.previous.title %}
+			<span class="col-md-4 text-left"><a href="{{page.previous.url}}" class="text-left" title="{{page.previous.title}}"><span class="glyphicon glyphicon-circle-arrow-left"></span>&nbsp;&nbsp;&nbsp;&nbsp;上一篇</a></span>
+		{% else %}
+			<span class="col-md-4"></span>
+		{% endif %}
+		<span class="col-md-4 text-center"><a href="{{page.url}}">{{page.title}}</a></span>
+		{% if page.next.title %}
+			<span class="col-md-4 text-right"><a href="{{page.next.url}}" class="text-right" title="{{page.next.title}}">下一篇&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span></a></span>
+		{% else %}
+			<span class="col-md-4"></span>
+		{% endif %}
+	</div>
+</div>
 </div>
 <div class="panel">
 <div class="panel-body">
